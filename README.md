@@ -14,9 +14,13 @@ The first time around it was held together with duck tape :D
     Learned Git, created github account
     Installed Terminus in Sublime to run the terminal
 
-10/15/21:
+10/14/21:
     Set up this github repo
     Initial commit/push of flaskblog.py, README.md
     Created new dedicated local file path to store website files
+
+10/15/21:
+    Got acquainted with my old code today.
+    Added bootstrap and css
 
 
