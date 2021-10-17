@@ -23,4 +23,7 @@ The first time around it was held together with duck tape :D
     Got acquainted with my old code today.
     Added bootstrap and css
 
+10/16/21:
+    Created forms for user input. Created buttons and login fields.
+    Added a database to track users using SQLAlchemy. I'm pretty familiar with sql but this was new to me. Its a Object Oriented database so it was interesting to get my hands on.
 
