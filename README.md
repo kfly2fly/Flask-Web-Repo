@@ -27,3 +27,8 @@ The first time around it was held together with duck tape :D
     Created forms for user input. Created buttons and login fields.
     Added a database to track users using SQLAlchemy. I'm pretty familiar with sql but this was new to me. Its a Object Oriented database so it was interesting to get my hands on.
 
+10/17/21:
+    Today I followed a tutorial that brings my application up to industry standards.
+    Before this I used a module structure where I had 1 main python file that ran my application. I got rid of this in favor of a python package.
+    The application now runs from a __inti__.py file and this will allow for a better division of files and tasks. This particularly helps out
+    the SQLAlchemy stuff because I was having to deal with a circular import.
