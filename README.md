@@ -6,6 +6,9 @@ site and align it with standard coding practices.
 
 The first time around it was held together with duck tape :D
 
+I want to credit Corey Schafer and Tech with Tim who taught me a lot about Flask and web design. I have used some of their code snippets
+but have tried to make this website my own as much as possible
+
 -- Change Log --
 10/8/21:
     Updated to Python 3.10
@@ -32,3 +35,7 @@ The first time around it was held together with duck tape :D
     Before this I used a module structure where I had 1 main python file that ran my application. I got rid of this in favor of a python package.
     The application now runs from a __inti__.py file and this will allow for a better division of files and tasks. This particularly helps out
     the SQLAlchemy stuff because I was having to deal with a circular import.
+
+10/19/21:
+    Connecting SQLAlchemy database to user login system. Storing passwords using Bcrypts hashing function. Made email login case insensitive.
+    Created a new account route, which requires users to be logged in to access. Register page now validates uniqueness for username and email.
