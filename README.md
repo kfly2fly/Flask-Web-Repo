@@ -39,3 +39,4 @@ but have tried to make this website my own as much as possible
 10/19/21:
     Connecting SQLAlchemy database to user login system. Storing passwords using Bcrypts hashing function. Made email login case insensitive.
     Created a new account route, which requires users to be logged in to access. Register page now validates uniqueness for username and email.
+    Added functionality to change account information. Profile pictures will now be saved to a database.
