@@ -40,3 +40,10 @@ but have tried to make this website my own as much as possible
     Connecting SQLAlchemy database to user login system. Storing passwords using Bcrypts hashing function. Made email login case insensitive.
     Created a new account route, which requires users to be logged in to access. Register page now validates uniqueness for username and email.
     Added functionality to change account information. Profile pictures will now be saved to a database.
+
+10/22/21:
+    Fleshed out the post section today. This will allow users to create, update, and delete posts. To delete posts I implemented a modal.
+    The tutorial that I'm following uses Bootstrap 4, so I've had to do some trouble shooting to get it to work in Bootstrap 5.
+    I also implemented Pagination today. I don't have many posts up yet, but once there are more than 5, they will be split up into several
+    different pages. This comes with a feature where you can click on someones name and be taken to a page where jsut their posts show up. I had
+    to create a custom anchor tag <!-- <a class="article-title"> --> because the previous look was ugly

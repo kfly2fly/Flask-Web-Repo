@@ -41,6 +41,10 @@ a.article-title:hover {
   text-decoration: none;
 }
 
+a.article-title {
+  text-decoration: none;
+}
+
 .article-content {
   white-space: pre-line;
 }
