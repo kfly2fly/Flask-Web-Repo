@@ -47,3 +47,8 @@ but have tried to make this website my own as much as possible
     I also implemented Pagination today. I don't have many posts up yet, but once there are more than 5, they will be split up into several
     different pages. This comes with a feature where you can click on someones name and be taken to a page where jsut their posts show up. I had
     to create a custom anchor tag <!-- <a class="article-title"> --> because the previous look was ugly
+
+10/29/21:
+    It's been a while since my last update. I've been following some tutorials by Corey Schafer. I've added blueprints and also a password reset
+    mechanism that will send users an email. I hope to adapt this functionality into a form where a user can enter their email and have my
+    resume sent to them.
