@@ -1,13 +1,11 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from flaskblog.models import User
 from flask_login import current_user
+from flaskblog.models import User
 
 # Will write python classes that will be representative of forms which will then be converted to HTML
-
-# Want to create a registration form, so we will write a registration form class, which will be inherited from FlaskForm
 
 class RegistrationForm(FlaskForm):
     # DataRequired means that the field cannot be blank, use wtforms.validators
@@ -60,13 +58,6 @@ class UpdateAccount(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('That email is taken. Please choose another.')
-
-
-class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')
-
 
 class RequestPasswordReset(FlaskForm):
     email = StringField('Email',

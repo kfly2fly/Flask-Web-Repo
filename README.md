@@ -52,3 +52,6 @@ but have tried to make this website my own as much as possible
     It's been a while since my last update. I've been following some tutorials by Corey Schafer. I've added blueprints and also a password reset
     mechanism that will send users an email. I hope to adapt this functionality into a form where a user can enter their email and have my
     resume sent to them.
+
+10/29/21:
+    Application factory, flask blueprints, allow for a version that we can test with and a production version
