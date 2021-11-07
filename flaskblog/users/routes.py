@@ -3,18 +3,21 @@ from flask_login import login_user, current_user, logout_user, login_required
 from flaskblog import db, bcrypt
 from flaskblog.models import User, Post
 from flaskblog.users.forms import RegistrationForm, LoginForm, UpdateAccount, RequestPasswordReset, ResetPasswordForm
+from flaskblog.users.utils import save_picture, send_reset_email
 
 users = Blueprint('users', __name__)
 
 
-@users.route("/register", methods = ['GET', 'POST'])
+@users.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data.upper(), password=hashed_password)
+        hashed_password = bcrypt.generate_password_hash(
+            form.password.data).decode('utf-8')
+        user = User(username=form.username.data,
+                    email=form.email.data.upper(), password=hashed_password)
         db.session.add(user)
         db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success')
@@ -22,7 +25,7 @@ def register():
     return render_template('register.html', form=form)
 
 
-@users.route("/login", methods = ['GET', 'POST'])
+@users.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
@@ -60,7 +63,8 @@ def account():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email.upper()
-    image_file = url_for('static', filename='profile_pic/' + current_user.image_file)
+    image_file = url_for(
+        'static', filename='profile_pic/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
 
 
@@ -97,7 +101,8 @@ def reset_token(token):
         return redirect(url_for('users.reset_request'))
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        hashed_password = bcrypt.generate_password_hash(
+            form.password.data).decode('utf-8')
         user.password = hashed_password
         db.session.commit()
         flash('Your password has been updated! You are now able to log in', 'success')
